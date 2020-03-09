@@ -2,7 +2,7 @@ const express = require('express')
 const db = require('./db')
 const app = express()
 
-const port = 4000 || process.env.PORT
+const port = process.env.PORT || 4000
 
 const { Router } = express
 const router = new Router()
