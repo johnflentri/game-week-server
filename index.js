@@ -4,6 +4,7 @@ const db = require('./db')
 const app = express()
 const userRouter = require('./user/router')
 const scoreRouter = require('./scores/router')
+const authRouter = require('./auth/router')
 
 const port = process.env.PORT || 4000
 
@@ -13,6 +14,7 @@ app.use(corsMiddleware)
 const parserMiddleware = express.json()
 app.use(parserMiddleware)
 
+app.use(authRouter)
 app.use(userRouter)
 app.use(scoreRouter)
 
