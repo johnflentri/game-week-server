@@ -15,10 +15,6 @@ const User = db.define(
     name: {
       type: Sequelize.STRING,
       allowNull: false
-    },
-    highscore: {
-      type: Sequelize.INTEGER,
-      allowNull: false
     }
   },
   {
