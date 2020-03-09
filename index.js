@@ -11,5 +11,5 @@ app.use(router)
 
 router.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(port, console.log('Database schema connected to port:', port))
+app.listen(port, () => console.log('Database schema connected to port:', port))
 
