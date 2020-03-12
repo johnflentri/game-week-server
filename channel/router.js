@@ -9,14 +9,13 @@ const router = Router()
 router.post("/channel", async (req, res, next) => {
   try {
     const newChannel = await Channel.create(req.body)
-    console.log("IS THIS NEW CHNNEL", newChannel)
     res.status(201).json(newChannel)
 
     const action = {
       type: 'NEW_CHANNEL',
       payload: newChannel
     }
-    console.log("this is action.payload", action.payload)
+    // console.log("this is action.payload", action.payload)
     stream.send(action)
 
   } catch (err) {

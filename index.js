@@ -6,6 +6,7 @@ const scoreRouter = require('./scores/router')
 const authRouter = require('./auth/router')
 const messageRouter = require('./message/router')
 const channelRouter = require('./channel/router')
+const imageRouter = require('./image/router')
 const stream = require('./stream')
 const db = require('./db')
 
@@ -21,6 +22,7 @@ app.use(authRouter)
 app.use(userRouter)
 app.use(scoreRouter)
 app.use(channelRouter)
+app.use(imageRouter)
 
 app.get('/stream', (request, response) => {
   stream.init(request, response)

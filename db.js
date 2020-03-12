@@ -4,7 +4,7 @@ const databaseUrl = process.env.DATABASE_URL || "postgres://postgres:secret@loca
 
 const db = new Sequelize(databaseUrl)
 
-db.sync()
+db.sync({ force: false }) //set up reset
   .then(() =>
     console.log("Database stargate pattern confirmed, Einstein-Rosen bridge stabilized!")
   )
